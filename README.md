@@ -1,194 +1,99 @@
-# 🤖 LuckyTechHub-Bot
+<div align="center">
+
+<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=700&size=32&duration=3000&pause=1000&color=8A2BE2&center=true&vCenter=true&width=650&height=100&lines=CASSIUS+TECH+BOT;The+Best+WhatsApp+Bot;Built+With+Baileys;Fast+%26+Powerful" alt="Typing" />
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=150&section=header&text=CASSIUS&fontSize=70&fontColor=fff&animation=fadeIn&fontAlignY=38&desc=Advanced%20Edition%202025&descAlignY=60&descAlign=50" />
+
+[![WhatsApp](https://img.shields.io/badge/CASSIUS-BOT-8A2BE2?style=for-the-badge&logo=whatsapp&logoColor=white)](https://whatsapp.com)
+[![Baileys](https://img.shields.io/badge/LIBRARY-BAILEYS-00BFFF?style=for-the-badge)](https://github.com/WhiskeySockets/Baileys)
+[![Version](https://img.shields.io/badge/VERSION-1.0.0-00FF7F?style=for-the-badge)](https://github.com)
+[![Prefix](https://img.shields.io/badge/PREFIX-.-FFD700?style=for-the-badge)](https://github.com)
+
+</div>
+
+---
+
+### 🤖 CASSIUS TECH BOT
 
 This is a WhatsApp bot built using the Baileys library for group management, including features like tagging all members, muting/unmuting, and many more. It's designed to help admins efficiently manage WhatsApp groups.
 
-<div align="center"> 
-  <a href="https://git.io/typing-svg"> 
-    <img src="https://readme-typing-svg.demolab.com?font=Ribeye&size=50&pause=1000&color=33ff00&center=true&width=910&height=100&lines=LuckyTechHub-Bot;Multi+Device+Whatsapp+Bot;Coded+By+Lucky218" alt="Typing SVG" />
-  </a> 
-</div> 
-
-<div align="center"> 
-  <a href="https://youtube.com/@luckytechhub-i9u"> 
-    <img src="https://github.com/luckytechhub/LuckyTechHub-Bot/blob/main/assets/bot_image.jpg" alt="Lucky Tech Hub Bot" height="300"> 
-  </a> 
-</div>
+**Coded By Cassius Tech**
 
 ---
 
-## 🚀 Steps to Deploy
+### 📋 Full Information
 
-### Step 1: Fork the Repository
+#### 👤 Bot Information
+- **Bot Name:** CASSIUS-TECH-BOT / CBTP
+- **Owner Name:** Cassius
+- **Owner Number:** 27686836786
+- **Bot Prefix:** `.` (dot)
+- **Library:** Baileys (WhiskeySockets/Baileys)
+- **Language:** JavaScript (Node.js)
+- **Version:** 1.0.0
+- **Timezone:** Africa/Johannesburg
 
-Click the button below to fork the Lucky Tech Hub Bot repository to your GitHub account:
+#### ✨ Features - Full List
 
-<div align="center">
-  <a href="https://github.com/luckytechhub/LuckyTechHub-Bot/fork">
-    <img src="https://img.shields.io/badge/Fork-Repository-blue?style=for-the-badge" alt="Fork the repository"/>
-  </a>
-</div>
+**1. Group Management 👥**
+- tagall - Tag all group members
+- tagadmin - Tag all admins
+- kick / add / promote / demote
+- mute / unmute group
+- open / close group
+- revoke group link
+- group info, group settings
+- hidetag (tag all hidden)
 
----
+**2. Protection & Security 🛡️**
+- anti-link - Deletes links automatically
+- anti-badword - Deletes bad words
+- anti-delete - Shows deleted messages
+- anti-call - Blocks calls
 
-### Step 2: Get Pair Code
+**3. Fun & Games 🎮**
+- TicTacToe
+- 8ball
+- Truth / Dare
+- Jokes, Quotes, Memes
+- Ship, Compatibility
 
-Deploy the bot and easily connect it to your WhatsApp account by pair code. Click the button below to deploy the bot on Replit.
+**4. Tools & Utilities 🛠️**
+- Text to Speech (tts)
+- Sticker maker (s / sticker)
+- AI Chat (ai, gpt)
+- Screenshot (ss)
+- Remini / HD image
+- Downloaders - TikTok, IG, FB, YouTube
+- Weather, Calculator, Translate
 
-<div align="center">
-  <a href="https://replit.com/@DGXeon/Xeon-PairCode?v=1" target="_blank">
-    <img src="https://img.shields.io/badge/GET%20PAIR%20CODE-Replit-success?style=for-the-badge" alt="Deploy on Replit"/>
-  </a>
-</div>
-
-<div align="center">
-  <a href="https://luckytechhub-bot-pair-code.onrender.com" target="_blank">
-    <img src="https://img.shields.io/badge/GET%20PAIR%20CODE-Easy%20Method-ff4d4d?style=for-the-badge" alt="Generate Pair Code"/>
-  </a>
-</div>
-
-
-### After getting creds.json file, upload it to session folder
-
----
-
-### Step 3: Deploy Now
-
-For further customization and setup guidance, click the button below:
-
-<div align="center">
-  <a href="https://youtu.be/sZhSE0chBrk">
-    <img src="https://img.shields.io/badge/Deploy Tutorial-dc3545?style=for-the-badge&logo=youtube" alt="YouTube Link"/>
-  </a>
-  <a href="https://bot-hosting.net/?aff=1068419752923508776">
-    <img src="https://img.shields.io/badge/Deploy on Panel-28a745?style=for-the-badge" alt="Deploy on Panel"/>
-  </a>
-</div>
-
-
-### Deploy Now on Below Panel
-<div align="center">
-<a href="https://dashboard.katabump.com/auth/login#d6b7d6" target="_blank">
-  <img src="https://img.shields.io/badge/Katabump-D6B7D6?style=for-the-badge&logo=server&logoColor=black" alt="Katabump"/>
-</a>
-</div>
-
-### Join Us
-
-<div align="center">
-  <a href="https://t.me/luckytechhub">
-    <img src="https://img.shields.io/badge/Join%20Telegram-0078E7?style=for-the-badge&logo=telegram&logoColor=white" alt="Join Telegram"/>
-  </a>
-  <a href="https://whatsapp.com/channel/0029VbAnuvT6RGJ9Qrf3NJ0L">
-    <img src="https://img.shields.io/badge/Join%20WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="Join WhatsApp"/>
-  </a>
-</div>
+**5. Owner Only 🔐**
+- Broadcast
+- Restart bot
+- Join group via link
+- Leave group
 
 ---
 
-## ⚙️ Features
+### 🚀 Steps to Deploy
 
-- **Tag all group members** with the `.tagall` command
-- **Admin restricted usage** (Only group admins can use certain commands)
-- **Games** like Tic-Tac-Toe for interactive group engagement
-- **Text-to-Speech** with `.tts`
-- **Sticker creation** with `.sticker`
-- **Anti-link detection** for group safety
-- **Warn and manage group members** with admin control
+#### Step 1: Fork the Repository 🍴
+Click Fork to copy this repo to your GitHub account. This is required to deploy.
 
----
+#### Step 2: Get Pair Code & Deploy 🔑
 
-## 📖 About
+**Option A - Render.com (Recommended):**
+1. Go to https://dashboard.render.com
+2. New + > Background Worker
+3. Connect your forked GitHub repo
+4. Build Command: `npm install`
+5. Start Command: `npm start`
+6. Deploy - Check LOGS for Pair Code (8 digits)
+7. Go to WhatsApp > Linked Devices > Link with Phone Number > Enter code
 
-The Lucky Tech Hub WhatsApp Bot assists group admins by providing them with tools to efficiently manage large WhatsApp groups. The bot uses the Baileys library to interact with the WhatsApp Web API and supports multi-device features.
-
-It is lightweight and can be easily customized to add more commands as per your requirements. The bot runs in a Node.js environment and provides QR code-based authentication to link your WhatsApp account.
-
----
-
-## 🛠️ Setup & Installation
-
-### Prerequisites
-
-- Node.js installed on your system
-- Git installed (for cloning the repository)
-
-### Step-by-Step Setup
-
-1. **Clone the repository:**
-
-    ```bash
-    git clone https://github.com/luckytechhub/LuckyTechHub-Bot.git
-    cd LuckyTechHub-Bot
-    ```
-
-2. **Install the dependencies:**
-
-    ```bash
-    npm install
-    ```
-
-3. **Run the bot:**
-
-    ```bash
-    node index.js
-    ```
-
-4. **Scan the QR code:**
-
-    Once the bot starts, a QR code will appear in the terminal. Scan this QR code using the Linked Devices feature in WhatsApp to connect your WhatsApp account with the bot.
-
----
-
-
-## 📄 License
-
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT) - see the [LICENSE](https://github.com/luckytechhub/LuckyTechHub-Bot/blob/main/LICENSE) file for details.
-
----
-
-## 🙌 Contributions
-
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/luckytechhub/LuckyTechHub-Bot/issues).
-
----
-
-## 🌟 Show your support
-
-If you like this project, please give it a [⭐️ star on GitHub](https://github.com/luckytechhub/LuckyTechHub-Bot)!
-
-
-## Credits
-
-- [Lucky218](https://github.com/luckytechhub)
-- [Baileys](https://github.com/adiwajshing/Baileys)
-- [TechGod143](https://github.com/TechGod143) for pair code
-- [Dgxeon](https://github.com/Dgxeon) for pair code
-
----
-
-## ⚠️ Important Warning
-
-**Note:** This bot is created for educational purposes only. This is NOT an official WhatsApp bot. Using this bot may lead to your WhatsApp account being banned. Use it at your own risk. The developers will not be responsible for any consequences or account bans that may occur while using this bot.
-
-## 📝 Legal
-
-- This project is not affiliated with, authorized, maintained, sponsored or endorsed by WhatsApp or any of its affiliates or subsidiaries.
-- This is an independent and unofficial software. Use at your own risk.
-- Do not spam people with this bot.
-- Do not use this bot to send bulk messages or for illegal purposes.
-- The developers assume no liability and are not responsible for any misuse or damage caused by this program.
-
-### License
-This project is licensed under the MIT License. However, you must:
-- Use this software in compliance with all applicable laws and regulations
-- Include original license and copyright notices
-- Credit original authors
-- Not use for spam or malicious purposes
-
-## 📜 Copyright Notice
-
-Copyright (c) 2025 Lucky218. All rights reserved.
-
-This project contains code from various open source projects:
-- Baileys (MIT License)
-- Other libraries as listed in package.json
+**Option B - Local / Termux / Panel:**
+```bash
+git clone https://github.com/YOUR-USERNAME/CASSIUS-TECH-BOT
+cd CASSIUS-TECH-BOT
+npm install
+npm start
