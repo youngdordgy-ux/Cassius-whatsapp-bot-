@@ -5,7 +5,7 @@ const settings = {
   botOwner: 'Cassius ', // Your name
   ownerNumber: '27686836786', //Set your number here without + symbol, just add country code & number without any space
   giphyApiKey: 'qnl7ssQChTdPjsKta2Ax2LMaGXz303tq',
-  commandMode: "👥public",
+  commandMode: "public",
   maxStoreMessages: 20, 
   storeWriteInterval: 10000,
   description: "> ᴅᴇꜱᴄʀɪᴘᴛɪᴏɴ: ᴛʜɪꜱ ʙᴏᴛ ɪꜱ ꜰᴏʀ ᴍᴀɴᴀɢɪɴɢ ɢʀᴏᴜᴘ ᴄᴏᴍᴍᴀɴᴅꜱ ᴀɴᴅ ᴀᴜᴛᴏᴍᴀᴛɪɴɢ ᴛᴀꜱᴋꜱ.",
