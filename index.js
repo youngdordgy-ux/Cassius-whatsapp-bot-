@@ -1,6 +1,9 @@
-/**
- * Lucky Tech Hub Bot - A WhatsApp Bot
- * Copyright (c) 2025 Lucky 218
+const express = require('express');
+const _app = express();
+_app.get('/', (req, res) => res.send('CASSIUS TECH BOT Online 24/7'));
+_app.listen(process.env.PORT || 3000, () => console.log('CASSIUS Web Server running'));
+ */_ Cassius Tech Hub Bot - A WhatsApp Bot
+ * Copyright (c) 2025 Cassius
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the MIT License.
