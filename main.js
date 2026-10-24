@@ -1644,7 +1644,7 @@ if (commandExecuted !== false) {
     } catch (error) {
         console.error('❌ Error in message handler:', error.message);
         // Only try to send error message if we have a valid chatId
-        if (message?.key.?.remoteJid){
+        if (message?.keyn?.remoteJid){
             await sock.sendMessage(message.key.remoteJid,{
                 text: '❌ Failed to process command!',
                 ...channelInfo
