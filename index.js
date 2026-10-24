@@ -148,7 +148,7 @@ async function startXeonBotInc() {
                             isForwarded: true,
                             forwardedNewsletterMessageInfo: {
                                 newsletterJid: '120363420656466131@newsletter',
-                                newsletterName: 'Lucky Tech Hub Bot',
+                                newsletterName: 'CASSIUS Tech Hub Bot',
                                 serverMessageId: -1
                             }
                         }
@@ -242,23 +242,23 @@ async function startXeonBotInc() {
 
             console.log(chalk.yellow(`╰══════════════════════✦═✦═✦═✦═✦═══─❒`))
            
-            const botname = "ʟᴜᴄᴋʏ ᴛᴇᴄʜ ʜᴜʙ ʙᴏᴛ";
-            const ownername = "ʟᴜᴄᴋʏ ➋➊➑";
-            const repo = "https://github.com/Tomilucky218/Lucky-XD2" 
+            const botname = "CASSIUS ᴛᴇᴄʜ ʜᴜʙ ʙᴏᴛ";
+            const ownername = "CASSIUS 2009";
+            const repo = "https://github.com/youngdordgy-ux/Cassius-whatsapp-bot" 
             const prefix = "[.]" 
-            const username = "Tomilucky218";
-            const lucky = `https://github.com/${username}`;
+            const username = "youngdordgy-ux";
+            const Cassius = `https://github.com/${username}`;
             const botNumber = XeonBotInc.user.id.split(':')[0] + '@s.whatsapp.net';
              await XeonBotInc.sendMessage(botNumber, {
         image: { url: "./assets/bot_image.jpg" },
-        caption: `╭═✦〔 *ᴄᴏɴɴᴇᴄᴛɪᴏɴ ɴᴏᴛɪᴄᴇ* 〕✦═╮\n\n *ʟᴜᴄᴋʏ ᴛᴇᴄʜ ʜᴜʙ ʙᴏᴛ ᴄᴏɴɴᴇᴄᴛᴇᴅ!* ✅\n\n> _One of the Best Whatsapp Bot._\n\n────────────────\n> 🌟 *ꜱᴛᴀʀ ʀᴇᴘᴏ* : ${repo}\n> 🪄 *ꜰᴏʟʟᴏᴡ ᴜꜱ* : ${lucky}\n> ⛔ *ʙᴏᴛ ᴘʀᴇꜰɪx* : ${prefix}\n> 📺 *ʏᴏᴜᴛᴜʙᴇ ᴛᴜᴛᴏʀɪᴀʟꜱ* : https://youtube.com/@luckytechhub-i9u\n────────────────\n\n> © ${ownername}`,
+        caption: `╭═✦〔 *ᴄᴏɴɴᴇᴄᴛɪᴏɴ ɴᴏᴛɪᴄᴇ* 〕✦═╮\n\n *Cassius ᴛᴇᴄʜ ʜᴜʙ ʙᴏᴛ ᴄᴏɴɴᴇᴄᴛᴇᴅ!* ✅\n\n> _One of the Best Whatsapp Bot._\n\n────────────────\n> 🌟 *ꜱᴛᴀʀ ʀᴇᴘᴏ* : ${repo}\n> 🪄 *ꜰᴏʟʟᴏᴡ ᴜꜱ* : ${cassius}\n> ⛔ *ʙᴏᴛ ᴘʀᴇꜰɪx* : ${prefix}\n> 📺 *ʏᴏᴜᴛᴜʙᴇ ᴛᴜᴛᴏʀɪᴀʟꜱ* : https://youtube.com/@luckytechhub-i9u\n────────────────\n\n> © ${ownername}`,
 
         contextInfo: {
             forwardingScore: 1,
             isForwarded: true,
             forwardedNewsletterMessageInfo: {
                 newsletterJid: '120363420656466131@newsletter',
-                newsletterName: 'Lucky Tech Hub Bot',
+                newsletterName: 'CASSIUS Tech Hub Bot',
                 serverMessageId: -1
             }
         }
@@ -273,13 +273,13 @@ async function startXeonBotInc() {
             await delay(500)
             console.log(chalk.green("╰══✦═✦═✦═✦═✦═✦═✦═✦═✦═✦═✦═✦═✦═✦═✦══─❒"))          
             await delay(500)
-            console.log(chalk.yellow(`\n\n  ${chalk.bold.blue(`[ ${global.botname || 'Lucky Tech Hub Bot'} ]`)}\n\n`))
+            console.log(chalk.yellow(`\n\n  ${chalk.bold.blue(`[ ${global.botname || 'CASSIUS Tech Hub Bot'} ]`)}\n\n`))
             console.log(chalk.cyan(`< =============================================== >`))
             await delay(500)
-            console.log(chalk.magenta(`\n${global.themeemoji || '•'} YT CHANNEL: LUCKY TECH HUB`))
-            console.log(chalk.magenta(`${global.themeemoji || '•'} GITHUB: luckytechhub`))
+            console.log(chalk.magenta(`\n${global.themeemoji || '•'} YT CHANNEL: youngdordgy`))
+            console.log(chalk.magenta(`${global.themeemoji || '•'} GITHUB: youngdordgy-ux`))
             console.log(chalk.magenta(`${global.themeemoji || '•'} WA NUMBER: ${owner}`))
-            console.log(chalk.magenta(`${global.themeemoji || '•'} CREDIT: LUCKY TECH HUB`))
+            console.log(chalk.magenta(`${global.themeemoji || '•'} CREDIT: Cassius TECH HUB`))
             await delay(500)
             console.log(chalk.red("╭══✦═✦═✦═✦═✦═✦═✦═✦═✦═✦═✦═✦═✦═✦═✦══─❒"))
             await delay(500)
