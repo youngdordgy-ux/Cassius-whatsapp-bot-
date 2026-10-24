@@ -1630,7 +1630,7 @@ if (commandExecuted !== false) {
                 });
             }
 
-            await sock.sendMessage(chatId, {
+            await sock.sendMessage(message.key.remoteJid, {
                 text: `✅ Group JID: ${groupJid}`
             }, {
                 quoted: message
@@ -1644,8 +1644,8 @@ if (commandExecuted !== false) {
     } catch (error) {
         console.error('❌ Error in message handler:', error.message);
         // Only try to send error message if we have a valid chatId
-        if (chatId) {
-            await sock.sendMessage(chatId, {
+        if (message?.key.?.remoteJid){
+            await sock.sendMessage(message.key.remoteJid,{
                 text: '❌ Failed to process command!',
                 ...channelInfo
             });
