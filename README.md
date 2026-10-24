@@ -1,3 +1,11 @@
+<img src="./assets/cassius-tech-bot.gif" width="700" alt="CASSIUS TECH BOT">
+
+# 💜 CASSIUS TECH BOT
+### The Most Powerful WhatsApp Bot by CASSIUS TECH
+
+> **24/7 Online | Free Hosting with UptimeRobot**
+
+---
 <div align="center"><img src="https://readme-typing-svg.herokuapp.com?font=Orbitron&weight=900&size=34&duration=1800&pause=500&color=8A2BE2&center=true&vCenter=true&width=850&height=90&lines=⚡+CASSIUS+TECH+BOT+⚡;🤖+THE+ULTIMATE+WHATSAPP+BOT;🔥+FAST+•+POWERFUL+•+SMART;🇿🇦+MFANA+PITORI+WA+BABELLA" /><br><img src="https://capsule-render.vercel.app/api?type=waving&color=0:8A2BE2,50:00BFFF,100:FF00FF&height=220&section=header&text=CASSIUS%20TECH%20BOT&fontSize=55&fontColor=ffffff&animation=twinkling&fontAlignY=40&desc=MFANA%20PITORI%20WA%20BABELLA&descAlignY=65&descSize=22" /><br><img src="https://img.shields.io/badge/⚡_CASSIUS-TECH-8A2BE2?style=for-the-badge" />
 <img src="https://img.shields.io/badge/WHATSAPP-BOT-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
 <img src="https://img.shields.io/badge/BAILEYS-POWERED-00BFFF?style=for-the-badge" />
