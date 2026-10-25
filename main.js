@@ -57,9 +57,8 @@ async function handleMessages(sock, messageUpdate) {
         const senderId = message.key.participant || message.key.remoteJid;
         const isGroup = chatId.endsWith('@g.us');
 
-        const chatId = message.key.remoteJid;
-const senderId = message.key.participant || message.key.remoteJid;
-const isGroup = chatId.endsWith('@g.us');
+        
+            
 
 let userMessage = (
     message.message?.conversation?.trim() ||
