@@ -1637,22 +1637,20 @@ if (commandExecuted !== false) {
             });
         }
 
-        if (userMessage.startsWith('.')) {
-            // After command is processed successfully
-            await addCommandReaction(sock, message);
-        }
-    } catch (error) {
-        console.error('❌ Error in message handler:', error.message);
-        // Only try to send error message if we have a valid chatId
-        if (message?.keyn?.remoteJid){
-            await sock.sendMessage(message.key.remoteJid,{
-                text: '❌ Failed to process command!',
-                ...channelInfo
-            });
-        }
+          if (userMessage.startsWith('.')) {
+    // after command is processed
+    try { await addCommandReaction(sock, m || msg); } catch {}
+  }
+} catch (err) {
+  console.error('❌ Error in message handler:', err.message);
+  try {
+    let jid = (typeof m !== 'undefined' && m?.chat) || (typeof msg !== 'undefined' && msg?.chat) || (typeof msg !== 'undefined' && msg?.key?.remoteJid);
+    if (jid) {
+      await sock.sendMessage(jid, { text: '❌ Error: ' + err.message });
     }
+  } catch {}
+ }
 }
-
 async function handleGroupParticipantUpdate(sock, update) {
     try {
         const { id, participants, action, author } = update;
