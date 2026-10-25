@@ -63,15 +63,56 @@ async function handleMessages(sock, messageUpdate) {
             message.message?.imageMessage?.caption?.trim() ||
             message.message?.videoMessage?.caption?.trim() ||
             ''
-        ).toLowerCase().replace(/\.\s+/g, '.').trim();
+        const chatId = message.key.remoteJid;
+const senderId = message.key.participant || message.key.remoteJid;
+const isGroup = chatId.endsWith('@g.us');
 
-        const rawText = message.message?.conversation?.trim() ||
-            message.message?.extendedTextMessage?.text?.trim() ||
-            message.message?.imageMessage?.caption?.trim() ||
-            message.message?.videoMessage?.caption?.trim() ||
-            '';
+const userMessage = (
+    message.message?.conversation?.trim() ||
+    message.message?.extendedTextMessage?.text?.trim() ||
+    message.message?.imageMessage?.caption?.trim() ||
+    message.message?.videoMessage?.caption?.trim() ||
+    ''
+).toLowerCase().replace(/\.\s+/g, '.').trim();
 
-        if (userMessage.startsWith('.')) {
+const rawText = (
+    message.message?.conversation?.trim() ||
+    message.message?.extendedTextMessage?.text?.trim() ||
+    message.message?.imageMessage?.caption?.trim() ||
+    message.message?.videoMessage?.caption?.trim() ||
+    ''
+);
+
+// ===== CASSIUS MENU REPLY 1-7 SYSTEM =====
+try {
+    if (global.cassiusMenuState && global.cassiusMenuState[chatId]) {
+        const numCheck = rawText.trim();
+        if (/^[1-7]$/.test(numCheck)) {
+            const menuFile = require('./commands/menu');
+            if (menuFile.handleMenuReply) {
+                await menuFile.handleMenuReply(sock, chatId, message, numCheck);
+                return;
+            }
+        }
+    }
+} catch(e) { console.log("Menu reply error:", e); }
+// ===== END MENU REPLY SYSTEM =====
+
+// Allow BOTH . and , prefix - and allow 1-7 replies
+if (!userMessage.startsWith('.') && !userMessage.startsWith(',')) {
+    if (!/^[1-7]$/.test(rawText.trim())) {
+        // check if banned or not command, but allow menu replies
+    }
+}
+
+// Convert ,menu to .menu
+if (userMessage.startsWith(',')) {
+    userMessage = '.' + userMessage.slice(1);
+}
+let cleanRaw = rawText;
+if (cleanRaw.startsWith(',')) {
+    cleanRaw = '.' + cleanRaw.slice(1);
+}
             console.log(`📝 ${userMessage} from ${isGroup ? 'group' : 'private'}`);
         }
 
