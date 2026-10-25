@@ -10,24 +10,24 @@ async function devCommand(sock, chatId, message, q) {
     const name = pushname || 'there';
 
     const caption = `
-╭─⌈ *👨‍💻 ʟ ᴛ ʜ ʙᴏᴛ ᴅᴇᴠᴇʟᴏᴘᴇʀ* ⌋─
+╭─⌈ *👨‍💻 CTPB ʙᴏᴛ ᴅᴇᴠᴇʟᴏᴘᴇʀ* ⌋─
 │
 │ 👋 Hello, *${name}*!
 │
-│ 🤖 I'm *Lucky 218*, the creator and
+│ 🤖 I'm *CASSIUS 2009*, the creator and
 │    maintainer of this smart WhatsApp bot.
 │
 │ 👨‍💻 *ᴅᴇᴠ ɪɴꜰᴏ:*
 │ ──────────
-│ 🧠 *Name:* Lucky 218
-│ 🎂 *Age:* +24
-│ 📞 *Contact:* wa.me/256789966218
-│ 📺 *YouTube:* Lucky Tech Hub
-│     https://youtube.com/@luckytechhub-i9u
+│ 🧠 *Name:* CASSIUS 2009
+│ 🎂 *Age:* +15
+│ 📞 *Contact:* wa.me/270686836867
+│ 📺 *YouTube:* CASSIUS Tech Hub
+│     https://youtube.com/@youngdordgy
 │
 ╰─────────
 
->⚡Powered By Lucky Tech Hub
+>⚡Powered By CASSIUS Tech Hub
     `.trim();
 
     const contextInfo = {
@@ -36,18 +36,18 @@ async function devCommand(sock, chatId, message, q) {
       isForwarded: true,
       forwardedNewsletterMessageInfo: {
         newsletterJid: "120363420656466131@newsletter",
-        newsletterName: "🪀『 ʟᴜᴄᴋʏ ᴛᴇᴄʜ ʜᴜʙ ʙᴏᴛ 』🪀",
+        newsletterName: "🪀『 Cassius ᴛᴇᴄʜ ʜᴜʙ ʙᴏᴛ 』🪀",
         serverMessageId: 143
       },
       externalAdReply: {
-        title: "ʟᴜᴄᴋʏ ᴛᴇᴄʜ ʜᴜʙ ʙᴏᴛ",
-        body: "Created with ❤️ by Lucky 218",
+        title: "Cassius ᴛᴇᴄʜ ʜᴜʙ ʙᴏᴛ",
+        body: "Created with ❤️ by Cassius 2009",
         thumbnailUrl: "https://files.catbox.moe/suqejh.jpg",
         mediaType: 1,
         renderSmallerThumbnail: true,
         showAdAttribution: true,
-        mediaUrl: "https://youtube.com/@luckytechhub-i9u",
-        sourceUrl: "https://youtube.com/@luckytechhub-i9u"
+        mediaUrl: "https://youtube.com/@youngdordgy",
+        sourceUrl: "https://youtube.com/@youngdordgy"
       }
     };
 
