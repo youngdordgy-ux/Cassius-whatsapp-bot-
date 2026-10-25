@@ -1,95 +1,59 @@
-module.exports = {
-name: "menu",
-alias: ["start", "help", "allmenu", "commands"],
-category: "general",
-execute: async (sock, m) => {
+async function menuCommand(sock, m, args) {
 let menu = `
 *╭━━━ 〔 CASSIUS TECH HUB BOT 〕━━━┈⊷*
 *┃* 🤖 BOT: CASSIUS MD V1.0.0
 *┃* 👑 OWNER: Cassius - 27686836786
 *┃* ⚡ SPEED: Super Fast
-*┃* 📅 UPTIME: Online
+*┃* 📅 MODE: Public
 *╰━━━━━━━━━━━━━━━━━━━━┈⊷*
 
 *╭─── DOWNLOAD ───*
 *│* .play, .song, .ytmp3
 *│* .video, .ytmp4, .ytv
-*│* .tiktok, .tt, .tiktokdl
-*│* .facebook, .fb, .fbdl
-*│* .instagram, .ig, .igdl
+*│* .tiktok, .tt
+*│* .facebook, .fb
+*│* .instagram, .ig
 *│* .mediafire, .mf
-*│* .gdrive
-*│* .apk, .app
-*│* .twitter, .xdl
+*│* .gdrive, .apk, .twitter
 *╰──────────────*
 
 *╭─── AI & SEARCH ───*
-*│* .gpt, .ai, .chatgpt
-*│* .gemini, .bard
-*│* .blackbox
+*│* .gpt, .ai, .gemini
 *│* .imagine, .dalle, .flux
-*│* .lyrics
-*│* .google, .gsearch
-*│* .wikipedia, .wiki
+*│* .google, .wikipedia, .lyrics
 *╰──────────────*
 
 *╭─── GROUP ───*
-*│* .tagall, .hidetag
-*│* .kick, .remove
-*│* .add
-*│* .promote, .demote
-*│* .mute, .unmute
-*│* .antilink, .antibadword
-*│* .welcome, .goodbye
-*│* .group open, .group close
-*│* .link, .invite
-*│* .poll
+*│* .tagall, .hidetag, .kick, .add
+*│* .promote, .demote, .mute, .unmute
+*│* .antilink, .welcome, .group open/close
+*│* .link, .poll
 *╰──────────────*
 
 *╭─── TOOLS ───*
-*│* .sticker, .s, .st
-*│* .toimg, .toimage
-*│* .tovideo, .tomp3
-*│* .url, .tourl
-*│* .ss, .screenshot
-*│* .translate, .trt
-*│* .calc, .calculator
-*│* .qr, .qrcode
-*│* .removebg
-*│* .enhance, .remini
+*│* .sticker, .s, .toimg, .tovideo
+*│* .url, .ss, .translate, .calc
+*│* .qr, .removebg, .enhance
 *╰──────────────*
 
 *╭─── GENERAL ───*
-*│* .ping, .speed
-*│* .alive, .uptime
-*│* .owner, .creator
-*│* .script, .sc
-*│* .support, .channel
+*│* .ping, .alive, .owner, .script
 *╰──────────────*
 
 *╭─── OWNER ───*
-*│* .ban, .unban
-*│* .block, .unblock
-*│* .join
-*│* .leave
-*│* .restart, .update
-*│* .broadcast, .bc
-*│* .setpp, .setbio
+*│* .ban, .unban, .block, .join, .leave
+*│* .restart, .broadcast, .setpp
 *╰──────────────*
 
-*╭─── FUN & FUN ───*
-*│* .joke, .quote
-*│* .fact
-*│* .flirt
-*│* .ship, .couple
-*│* .truth, .dare
-*╰──────────────*
-
-*Total Commands: 119+*
-> © CASSIUS Tech Hub 2026
-> Type .[command] to use
+*Total: 119+ Commands*
+> © CASSIUS Tech Hub Bot
 `;
-
 await sock.sendMessage(m.chat, { text: menu }, { quoted: m });
 }
-};
+
+menuCommand.name = "menu";
+menuCommand.alias = ["start", "help", "allmenu"];
+menuCommand.category = "general";
+menuCommand.execute = menuCommand;
+
+module.exports = menuCommand;apiUrl
