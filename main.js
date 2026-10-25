@@ -22,7 +22,7 @@ const menu2Command = require('./commands/menu2');
 
 const apkCommand = require('./commands/apk');
 const killCommand = require("./commands/kill");
-const luckyCommand = require("./commands/lucky");
+const CassiusCommand = require("./commands/Cassius");
 const llama3Command = require("./commands/llama3");
 const readBlocklistCommand = require('./commands/readBlocklist');
 const defineCommand = require("./commands/define");
@@ -140,8 +140,8 @@ const soraCommand = require('./commands/sora');
 // Global settings
 global.packname = settings.packname;
 global.author = settings.author;
-global.channelLink = "https://whatsapp.com/channel/0029VbAnuvT6RGJ9Qrf3NJ0L";
-global.ytch = "Lucky Tech Hub";
+global.channelLink = "https://whatsapp.com/channel/0029VbDeT5tKwqSM5FGMaK3p";
+global.ytch = "CASSIUS Tech Hub";
 
 // Add this near the top of main.js with other global configurations
 const channelInfo = {
@@ -150,7 +150,7 @@ const channelInfo = {
         isForwarded: true,
         forwardedNewsletterMessageInfo: {
             newsletterJid: '120363420656466131@newsletter',
-            newsletterName: 'Lucky Tech Hub Bot',
+            newsletterName: 'CASSIUS Tech Hub Bot',
             serverMessageId: -1
         }
     }
@@ -1622,33 +1622,30 @@ if (commandExecuted !== false) {
 
         // Function to handle .groupjid command
         async function groupJidCommand(sock, chatId, message) {
-            const groupJid = message.key.remoteJid;
+                const groupJid = m?.chat || m?.key?.remoteJid;
 
-            if (!groupJid.endsWith('@g.us')) {
-                return await sock.sendMessage(chatId, {
-                    text: "❌ This command can only be used in a group."
-                });
-            }
-
-            await sock.sendMessage(message.key.remoteJid, {
-                text: `✅ Group JID: ${groupJid}`
-            }, {
-                quoted: message
-            });
+        if (!groupJid || !groupJid.endsWith('@g.us')) {
+            return await sock.sendMessage(m.chat, { text: '❌ This command can only be used in groups.' }, { quoted: m });
         }
 
-          if (userMessage.startsWith('.')) {
-    // after command is processed
-    try { await addCommandReaction(sock, m || msg); } catch {}
-  }
-} catch (err) {
-  console.error('❌ Error in message handler:', err.message);
-  try {
-    let jid = (typeof m !== 'undefined' && m?.chat) || (typeof msg !== 'undefined' && msg?.chat) || (typeof msg !== 'undefined' && msg?.key?.remoteJid);
-    if (jid) {
-      await sock.sendMessage(jid, { text: '❌ Error: ' + err.message });
+        await sock.sendMessage(groupJid, { 
+            text: `✅ Done!`, 
+        }, { quoted: m });
     }
-  } catch {}
+
+    if (userMessage.startsWith('.')) {
+        // after command is processed
+        try { await addCommandReaction(sock, m || msg); } catch {}
+    }
+} catch (err) {
+    console.error('❌ Error in message handler:', err.message);
+    try {
+        let jid = (typeof m !== 'undefined' && m?.chat) || (typeof msg !== 'undefined' && msg?.chat);
+        if (jid) {
+            await sock.sendMessage(jid, { text: '❌ Error: ' + err.message });
+        }
+    } catch {}
+    }
  }
 }
 async function handleGroupParticipantUpdate(sock, update) {
