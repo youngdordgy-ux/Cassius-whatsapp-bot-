@@ -57,17 +57,47 @@ async function handleMessages(sock, messageUpdate) {
         const senderId = message.key.participant || message.key.remoteJid;
         const isGroup = chatId.endsWith('@g.us');
 
-        const userMessage = (
-            message.message?.conversation?.trim() ||
-            message.message?.extendedTextMessage?.text?.trim() ||
-            message.message?.imageMessage?.caption?.trim() ||
-            message.message?.videoMessage?.caption?.trim() ||
-            ''
         const chatId = message.key.remoteJid;
 const senderId = message.key.participant || message.key.remoteJid;
 const isGroup = chatId.endsWith('@g.us');
 
-const userMessage = (
+let userMessage = (
+    message.message?.conversation?.trim() ||
+    message.message?.extendedTextMessage?.text?.trim() ||
+    message.message?.imageMessage?.caption?.trim() ||
+    message.message?.videoMessage?.caption?.trim() ||
+    ''
+).toLowerCase().replace(/\.\s+/g, '.').trim();
+const rawText = (
+    message.message?.conversation?.trim() ||
+    message.message?.extendedTextMessage?.text?.trim() ||
+    message.message?.imageMessage?.caption?.trim() ||
+    message.message?.videoMessage?.caption?.trim() ||
+    ''
+);
+
+// ===== CASSIUS MENU REPLY 1-7 SYSTEM =====
+try {
+    if (global.cassiusMenuState && global.cassiusMenuState[chatId]) {
+        const numCheck = rawText.trim();
+        if (/^[1-7]$/.test(numCheck)) {
+            const menuFile = require('./commands/menu');
+            if (menuFile.handleMenuReply) {
+                await menuFile.handleMenuReply(sock, chatId, message, numCheck);
+                return;
+            }
+        }
+    }
+} catch(e) {}
+// ===== END MENU REPLY SYSTEM =====
+
+if (userMessage.startsWith(',')) {
+    userMessage = '.' + userMessage.slice(1);
+}
+let cleanRaw = rawText;
+if (cleanRaw.startsWith(',')) {
+    cleanRaw = '.' + cleanRaw.slice(1);
+}
     message.message?.conversation?.trim() ||
     message.message?.extendedTextMessage?.text?.trim() ||
     message.message?.imageMessage?.caption?.trim() ||
