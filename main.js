@@ -1645,7 +1645,6 @@ if (commandExecuted !== false) {
             await sock.sendMessage(jid, { text: '❌ Error: ' + err.message });
         }
     } catch {}
-    }
  }
 }
 async function handleGroupParticipantUpdate(sock, update) {
