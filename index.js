@@ -1,4 +1,10 @@
-const { default: makeWASocket, useMultiFileAuthState, DisconnectReason } = require('@whiskeysockets/baileys');
+const http = require('http');
+http.createServer((req, res) => {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('CASSIUS MD V1.0.1 is Live 🔥');
+}).listen(process.env.PORT || 10000, () => {
+  console.log('Port bound - bot is live');
+});const { default: makeWASocket, useMultiFileAuthState, DisconnectReason } = require('@whiskeysockets/baileys');
 const { Boom } = require('@hapi/boom');
 const pino = require('pino');
 
