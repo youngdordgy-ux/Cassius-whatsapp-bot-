@@ -52,37 +52,44 @@ async function handleMessages(sock, messageUpdate) {
         if (type !== 'notify') return;
         const message = messages[0];
         if (!message?.message) return;
-        
-        const chatId = message.key.remoteJid;
-        const senderId = message.key.participant || message.key.remoteJid;
-        const isGroup = chatId.endsWith('@g.us');
+            const chatId = message.key.remoteJid;
+    const senderId = message.key.participant || message.key.remoteJid;
+    const isGroup = chatId.endsWith('@g.us');
 
-        
-            
+    let userMessage = (
+        message.message?.conversation ||
+        message.message?.extendedTextMessage?.text ||
+        message.message?.imageMessage?.caption ||
+        message.message?.videoMessage?.caption ||
+        ''
+    ).toLowerCase().replace(/\. +/g, '.').trim();
 
-let userMessage = (
-    message.message?.conversation?.trim() ||
-    message.message?.extendedTextMessage?.text?.trim() ||
-    message.message?.imageMessage?.caption?.trim() ||
-    message.message?.videoMessage?.caption?.trim() ||
-    ''
-).toLowerCase().replace(/\.\s+/g, '.').trim();
-const rawText = (
-    message.message?.conversation?.trim() ||
-    message.message?.extendedTextMessage?.text?.trim() ||
-    message.message?.imageMessage?.caption?.trim() ||
-    message.message?.videoMessage?.caption?.trim() ||
-    ''
-);
+    const rawText = (
+        message.message?.conversation ||
+        message.message?.extendedTextMessage?.text ||
+        message.message?.imageMessage?.caption ||
+        message.message?.videoMessage?.caption ||
+        ''
+    ).trim();
 
-// ===== CASSIUS MENU REPLY 1-7 SYSTEM =====
-try {
-    if (global.cassiusMenuState && global.cassiusMenuState[chatId]) {
-        const numCheck = rawText.trim();
-        if (/^[1-7]$/.test(numCheck)) {
-            const menuFile = require('./commands/menu');
-            if (menuFile.handleMenuReply) {
-                await menuFile.handleMenuReply(sock, chatId, message, numCheck);
+    // ===== CASSIUS MENU REPLY 1-7 =====
+    try {
+        if (global.cassiusMenuState && global.cassiusMenuState[chatId]) {
+            const numCheck = rawText.trim();
+            if (/^[1-7]$/.test(numCheck)) {
+                const menuFile = require('./commands/menu');
+                if (menuFile.handleMenuReply) {
+                    await menuFile.handleMenuReply(sock, chatId, message, numCheck);
+                    return;
+                }
+            }
+        }
+    } catch(e) {}
+    // ===== END =====
+
+    if (userMessage.startsWith(',')) {
+        userMessage = '.' + userMessage.slice(1);
+    }
                 return;
             }
         }
