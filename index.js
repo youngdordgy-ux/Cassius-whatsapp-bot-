@@ -9,8 +9,28 @@ const { Boom } = require('@hapi/boom');
 const pino = require('pino');
 
 async function startBot() {
+  async function startBot() {
   const { state, saveCreds } = await useMultiFileAuthState('./auth');
+  
   const sock = makeWASocket({
+    auth: state,
+    logger: pino({ level: 'silent' }),
+    browser: ['CASSIUS MD', 'Chrome', '1.0'],
+  });
+
+  // THIS IS THE MISSING CODE PRINTER!
+  if (!sock.authState.creds.registered) {
+    const phoneNumber = process.env.PHONE_NUMBER || '27600000000'; // put YOUR number here without + 
+    console.log('Requesting pairing code for:', phoneNumber);
+    await new Promise(r => setTimeout(r, 3000));
+    const code = await sock.requestPairingCode(phoneNumber.trim());
+    console.log('====================================');
+    console.log('YOUR PAIRING CODE: ' + code);
+    console.log('Go to WhatsApp > Linked Devices > Link with phone number');
+    console.log('====================================');
+  }
+
+  sock.ev.on('creds.update', saveCreds);
     auth: state,
     logger: pino({ level: 'silent' }),
     printQRInTerminal: true
