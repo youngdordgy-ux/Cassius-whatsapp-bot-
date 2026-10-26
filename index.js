@@ -52,37 +52,44 @@ store.readFromFile()
 const settings = require('./settings')
 setInterval(() => store.writeToFile(), settings.storeWriteInterval || 10000)
 
-// Memory optimization - Force garbage collection if available
-setInterval(() => {
-    if (global.gc) {
-        global.gc()
-        console.log('🧹 Garbage collection completed')
+    const chatId = message.key.remoteJid;
+    const senderId = message.key.participant || message.key.remoteJid;
+    const isGroup = chatId.endsWith('@g.us');
+
+    let userMessage = (
+        message.message?.conversation ||
+        message.message?.extendedTextMessage?.text ||
+        message.message?.imageMessage?.caption ||
+        message.message?.videoMessage?.caption ||
+        ''
+    ).toLowerCase().replace(/\. +/g, '.').trim();
+
+    const rawText = (
+        message.message?.conversation ||
+        message.message?.extendedTextMessage?.text ||
+        message.message?.imageMessage?.caption ||
+        message.message?.videoMessage?.caption ||
+        ''
+    ).trim();
+
+    // ===== CASSIUS MENU REPLY 1-7 =====
+    try {
+        if (global.cassiusMenuState && global.cassiusMenuState[chatId]) {
+            const numCheck = rawText.trim();
+            if (/^[1-7]$/.test(numCheck)) {
+                const menuFile = require('./commands/menu');
+                if (menuFile.handleMenuReply) {
+                    await menuFile.handleMenuReply(sock, chatId, message, numCheck);
+                    return;
+                }
+            }
+        }
+    } catch(e) {}
+    // ===== END =====
+
+    if (userMessage.startsWith(',')) {
+        userMessage = '.' + userMessage.slice(1);
     }
-}, 60_000) // every 1 minute
-
-// Memory monitoring - Restart if RAM gets too high
-setInterval(() => {
-    const used = process.memoryUsage().rss / 1024 / 1024
-    if (used > 900) {
-        console.log('⚠️ RAM too high (>900MB), restarting bot...')
-        process.exit(1) // Panel will auto-restart
-    }
-}, 30_000) // check every 30 seconds
-
-let phoneNumber = "911234567890"
-let owner = JSON.parse(fs.readFileSync('./data/owner.json'))
-
-global.botname = "CASSIUS TECH BOT "
-global.themeemoji = "•"
-const pairingCode = !!phoneNumber || process.argv.includes("--pairing-code")
-const useMobile = process.argv.includes("--mobile")
-
-// Only create readline interface if we're in an interactive environment
-const rl = process.stdin.isTTY ? readline.createInterface({ input: process.stdin, output: process.stdout }) : null
-const question = (text) => {
-    if (rl) {
-        return new Promise((resolve) => rl.question(text, resolve))
-    } else {
         // In non-interactive environment, use ownerNumber from settings
         return Promise.resolve(settings.ownerNumber || phoneNumber)
     }
