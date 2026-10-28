@@ -1,69 +1,44 @@
 const http = require('http');
-http.createServer((req, res) => {
-  res.writeHead(200, {'Content-Type': 'text/plain'});
-  res.end('CASSIUS MD V1.0.1 is Live');
-}).listen(process.env.PORT || 10000, () => {
-  console.log('Port bound - bot is live');
-});
+http.createServer((req,res)=>{res.end('CASSIUS MD V1.0.1 is Live - QR & PAIRING READY');}).listen(process.env.PORT||10000);
 
-const { default: makeWASocket, useMultiFileAuthState, DisconnectReason } = require('@whiskeysockets/baileys');
-const { Boom } = require('@hapi/boom');
-const pino = require('pino');
+const {default:makeWASocket,useMultiFileAuthState,DisconnectReason}=require('@whiskeysockets/baileys');
+const {Boom}=require('@hapi/boom');
+const pino=require('pino');
+const qrcode=require('qrcode-terminal');
 
-async function startBot() {
-  const { state, saveCreds } = await useMultiFileAuthState('./auth');
-  const sock = makeWASocket({
-    auth: state,
-    logger: pino({ level: 'silent' }),
-    browser: ['CASSIUS MD', 'Chrome', '1.0']
-  });
+async function startBot(){
+  const {state,saveCreds}=await useMultiFileAuthState('./auth');
+  const sock=makeWASocket({auth:state,logger:pino({level:'silent'}),browser:['CASSIUS','Chrome','1.0']});
+  sock.ev.on('creds.update',saveCreds);
 
-  sock.ev.on('creds.update', saveCreds);
-
-  if (!sock.authState.creds.registered) {
-    const phoneNumber = (process.env.PHONE_NUMBER || '').replace(/[^0-9]/g, '');
-    if (phoneNumber) {
-      console.log('Waiting 3 seconds to request pairing code...');
-      await new Promise(r => setTimeout(r, 3000));
-      try {
-        const code = await sock.requestPairingCode(phoneNumber);
-        console.log('====================================');
-        console.log('PAIRING CODE: ' + code);
-        console.log('For number: ' + phoneNumber);
-        console.log('====================================');
-      } catch (e) {
-        console.log('Failed to get pairing code:', e.message);
-      }
-    } else {
-      console.log('Add PHONE_NUMBER in Render Environment to get pairing code');
+  // PAIRING CODE LOGIC
+  if(!sock.authState.creds.registered){
+    const num=(process.env.PHONE_NUMBER||'').replace(/[^0-9]/g,'');
+    if(num){
+      await new Promise(r=>setTimeout(r,4000));
+      try{
+        const code=await sock.requestPairingCode(num);
+        console.log('\n\n--------------------------');
+        console.log('YOUR 8-DIGIT PAIRING CODE: '+code);
+        console.log('Go to WhatsApp > Linked Devices > Link with phone number');
+        console.log('--------------------------\n\n');
+      }catch(e){console.log('Pairing failed, will show QR:',e.message)}
     }
   }
 
-  sock.ev.on('connection.update', (update) => {
-    const { connection, lastDisconnect } = update;
-    if (connection === 'close') {
-      const shouldReconnect = lastDisconnect?.error instanceof Boom ? lastDisconnect.error.output.statusCode !== DisconnectReason.loggedOut : true;
-      if (shouldReconnect) startBot();
-    } else if (connection === 'open') {
-      console.log('CASSIUS MD V1.0.1 Connected!');
+  sock.ev.on('connection.update',async({connection,lastDisconnect,qr})=>{
+    // QR CODE LOGIC
+    if(qr){
+      console.log('\n\n--------------------------');
+      console.log('SCAN THIS QR CODE:');
+      qrcode.generate(qr,{small:true});
+      console.log('--------------------------\n\n');
     }
-  });
-
-  sock.ev.on('messages.upsert', async (m) => {
-    try {
-      const msg = m.messages[0];
-      if (!msg?.message) return;
-      const chatId = msg.key.remoteJid;
-      let text = msg.message.conversation || msg.message.extendedTextMessage?.text || '';
-      text = text.trim().toLowerCase();
-      if (!text.startsWith('.')) return;
-      if (text === '.menu') {
-        await sock.sendMessage(chatId, { text: 'CASSIUS MD V1.0.1 Menu\n\n.menulive' });
-      }
-    } catch (e) {
-      console.log(e);
+    if(connection==='close'){
+      const shouldReconnect=lastDisconnect?.error?.output?.statusCode!==DisconnectReason.loggedOut;
+      if(shouldReconnect) startBot();
     }
+    if(connection==='open') console.log('✅ CASSIUS MD CONNECTED!');
   });
 }
-
 startBot();
