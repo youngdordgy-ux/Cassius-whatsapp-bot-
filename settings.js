@@ -1,19 +1,27 @@
 const settings = {
-  packname:'Cassius Tech bot',
-  author: '‎',
-  botName: "CBTP",
-  botOwner: 'Cassius ', // Your name
-  ownerNumber: '27686836786', //Set your number here without + symbol, just add country code & number without any space
+  packname: 'CASSIUS MD V1.0.1',
+  author: 'Cassius Tech',
+  botName: "CASSIUS MD V1.0.1",
+  botOwner: 'Cassius',
+  ownerNumber: '27686836786',
   giphyApiKey: 'qnl7ssQChTdPjsKta2Ax2LMaGXz303tq',
   commandMode: "public",
-  maxStoreMessages: 20, 
+  maxStoreMessages: 20,
   storeWriteInterval: 10000,
-  description: "> ᴅᴇꜱᴄʀɪᴘᴛɪᴏɴ: ᴛʜɪꜱ ʙᴏᴛ ɪꜱ ꜰᴏʀ ᴍᴀɴᴀɢɪɴɢ ɢʀᴏᴜᴘ ᴄᴏᴍᴍᴀɴᴅꜱ ᴀɴᴅ ᴀᴜᴛᴏᴍᴀᴛɪɴɢ ᴛᴀꜱᴋꜱ.",
-  caption: "ᴘᴏᴡᴇʀᴇᴅ ʙʏ Cassius bot Company",
-  version: "1.0.0",
-  prefix: ".", // prefix (e.g., ., /, !, *)
-  timezone: "Africa/South Africa", //put your country timeZone....leave blank if u don't know
-  updateZipUrl: "https://www.mediafire.com/file/zlbozqwb014g68w/LuckyTechHub-Bot-main.zip/file",
+  description: "> CASSIUS MD V1.0.1 - Professional WhatsApp Bot",
+  caption: "POWERED BY Cassius Tech",
+  version: "1.0.1",
+  prefix: ".",
+  timezone: "Africa/Johannesburg",
+  updateZipUrl: "https://www.mediafire.com/file/zlbozqwb0",
+  
+  // ===== CASSIUS PROFESSIONAL MENU =====
+  menuImage: "https://files.catbox.moe/kknq4e.jpg.jpg",
+  botImage: "https://files.catbox.moe/kknq4e.jpg.jpg",
+  thumbnail: "https://files.catbox.moe/YOUR_IMAGE_LINK.jpg",
+  channelLink: "https://whatsapp.com/channel/0029VbDeT5tKwqSM5FGMaK3p",
+  watermark: "© CASSIUS MD V1.0.1",
+  footer: "Powered by Cassius Tech"
 };
 
 module.exports = settings;
